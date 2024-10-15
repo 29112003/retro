@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector(".main"),
   smooth: true,
-  multiplier:.2,
+  multiplier:0.5,
 });
 // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
 locoScroll.on("scroll", ScrollTrigger.update);
@@ -69,7 +69,7 @@ function page1Animation(){
   var tl1=gsap.timeline();
   tl1.from(".img1",{
     scale:0,
-    duration:.5,
+    duration:0.2,
     delay:5,
   },"elem1")
   tl1.from(".img2",{
@@ -105,7 +105,7 @@ function page1Animation(){
 
   gsap.from(".page1overlay",{
     y:-400,
-    duration:1,
+    duration:0.5,
     delay:6,
   })
   var tl=gsap.timeline({
@@ -113,7 +113,7 @@ function page1Animation(){
       trigger:".imgcontainer",
       scroller:".main",
       pin:true,
-      scrub:2,
+      scrub:1,
       // markers:true,
       start:"top -60%",
     }
